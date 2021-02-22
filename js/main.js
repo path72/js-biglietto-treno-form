@@ -74,7 +74,3 @@ eraseBtn.addEventListener('click',
     tktPriceHtml.innerHTML  = ''; 
     }
 );
-
-//###################################################### 
-//
-

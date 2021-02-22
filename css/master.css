@@ -125,57 +125,15 @@ main #output_ticket .ticket_box table td {
 /****************************************************************
 **  TEXTS
 */
-/* .ms_txt_payoff {
-  font-size: 3em;
-  font-weight: 600;
-} */
 .ms_txt_title {
   font-size: 1.5em;
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 30px;
 }
-/* .ms_txt_subtitle {
-  font-size: 1.1em;
-  font-weight: 500;
-} */
 .ms_txt_1 {
   display: inline-block;
   font-size: 0.9em;
   font-weight: 500;
   margin-bottom: 10px;
 }
-/* .ms_txt_2 {
-  font-size: 1.5em;
-  font-weight: 200;
-  line-height: 1.5em;
-} */
-/* .ms_txt_small_1 {
-  font-size: 0.9em;
-  font-weight: 600; 
-} */
-/* .ms_txt_small_1 {
-    font-size: 0.9em;
-    font-weight: 600; 
-} */
- 
-/****************************************************************
-**  SCHERZO
-*/
-/* 
-[class*="-xs-"]:nth-child(3n+2) {
-  animation: test 4s linear 10s 2 alternate;
-}
-[class*="-xs-"]:nth-child(2n+1) {
-  animation: test 4s linear 14s 2 alternate;
-}
-[class*="col-"] {
-  animation: test 4s linear 18s 1 alternate;
-}
-@keyframes test {
-0%   {transform: rotate(0deg);}
-25%  {transform: rotate(10deg);}
-50%  {transform: rotate(360deg);}
-75%  {transform: rotate(750deg);}
-100% {transform: rotate(0deg);}
-} */
