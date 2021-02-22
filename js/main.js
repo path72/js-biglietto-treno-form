@@ -52,7 +52,7 @@ function() {
     tktPriceHtml.innerHTML  = '€' + ticketPrice;  
 
     // ticket display
-    outTicketHtml.style.display = 'block';
+    outTicketHtml.style.opacity = 1;
   }
 } 
 );
@@ -62,7 +62,7 @@ var eraseBtn = document.getElementById('erase');
 eraseBtn.addEventListener('click', 
   function() {
     // ticket hiding
-    outTicketHtml.style.display = 'none';
+    outTicketHtml.style.opacity = 0;
     // data erasing
     usrNameForm.value       = '';
     usrKmForm.value         = '';
