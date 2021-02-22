@@ -42,7 +42,9 @@ function() {
     document.getElementById('tkt_range').innerHTML  = ticketRange;  
     document.getElementById('coach_num').innerHTML  = coachNumber;  
     document.getElementById('train_code').innerHTML = trainCode;  
-    document.getElementById('tkt_price').innerHTML  =  '€' + ticketPrice;  
+    document.getElementById('tkt_price').innerHTML  = '€' + ticketPrice;  
+
+    document.getElementById('output_ticket').style.display = 'block';
 
   // }
 } 
@@ -51,12 +53,15 @@ function() {
 var eraseBtn = document.getElementById('erase');
 eraseBtn.addEventListener('click', 
   function() {
+    document.getElementById('output_ticket').style.display = 'none';
     usrName.value = '';
     usrKm.value   = '';
     usrAge.value  = '';
-    console.log(   'usrNameValue = ' + usrNameValue + '\n'
-                  + 'usrKmValue   = ' + usrKmValue   + '\n'
-                  + 'usrAgeValue  = ' + usrAgeValue  + '\n' );
+    document.getElementById('usr_name').innerHTML   = '';
+    document.getElementById('tkt_range').innerHTML  = '';  
+    document.getElementById('coach_num').innerHTML  = '';  
+    document.getElementById('train_code').innerHTML = '';  
+    document.getElementById('tkt_price').innerHTML  = ''; 
     }
 );
 
