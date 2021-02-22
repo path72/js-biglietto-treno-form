@@ -4,62 +4,76 @@
 const priceUnit = 0.21; // €/Km
 var usrNameValue, usrKmValue, usrAgeValue;
 
-var usrName = document.getElementById('name_surname');
-var usrKm   = document.getElementById('distance');
-var usrAge  = document.getElementById('age_range');
+// form sources
+var usrNameForm = document.getElementById('name_surname');
+var usrKmForm   = document.getElementById('distance');
+var usrAgeForm  = document.getElementById('age_range');
 
+// data display hooks
+var outTicketHtml = document.getElementById('output_ticket')
+var usrNameHtml   = document.getElementById('usr_name');
+var tktRangeHtml  = document.getElementById('tkt_range');  
+var coachNumHtml  = document.getElementById('coach_num');  
+var trainCodeHtml = document.getElementById('train_code');  
+var tktPriceHtml  = document.getElementById('tkt_price');  
+
+// ** TICKET GENERATION **
 var generateBtn = document.getElementById('generate');
 generateBtn.addEventListener('click', 
 function() {
 
-  // if (usrNameValue == '' || usrKmValue == '') {
-  //   alert('compila nome e distanza!');
-  // } else {
+  // data retrieving
+  usrNameValue = usrNameForm.value;
+  usrKmValue   = usrKmForm.value;
+  usrAgeValue  = usrAgeForm.value;    
+  console.log(   'usrNameValue = ' + usrNameValue + '\n'
+               + 'usrKmValue   = ' + usrKmValue   + '\n'
+               + 'usrAgeValue  = ' + usrAgeValue  + '\n' );
 
-    usrNameValue = usrName.value;
-    usrKmValue   = usrKm.value;
-    usrAgeValue  = usrAge.value;    
-    console.log(   'usrNameValue = ' + usrNameValue + '\n'
-                 + 'usrKmValue   = ' + usrKmValue   + '\n'
-                 + 'usrAgeValue  = ' + usrAgeValue  + '\n' );
+  // consistency check
+  if (usrNameValue == '' || usrKmValue == '') {
+    alert('compila nome e distanza!');
+  } else {
 
-
+    // data generation
+    var coachNumber = Math.floor(Math.random()*10)+1;
+    var trainCode = Math.floor(Math.random()*10000)+90000;
     var ticketPrice = priceUnit * usrKmValue;    
-    var ticketRange = 'Tariffa standard';
+    var ticketRange = 'N.A.';
     if      (usrAgeValue == 'age_1') { ticketPrice *= 0.8; ticketRange = 'Sconto minorenne'; }
     else if (usrAgeValue == 'age_2') { ticketPrice *= 0.6; ticketRange = 'Sconto over 65'; }
     ticketPrice = (Math.round(ticketPrice*100)/100).toFixed(2);
 
-    var coachNumber = Math.floor(Math.random()*10)+1;
-    var trainCode = Math.floor(Math.random()*10000)+90000;
-    
-    document.getElementById('usr_name').innerHTML   = usrNameValue;
-    document.getElementById('tkt_range').innerHTML  = ticketRange;  
-    document.getElementById('coach_num').innerHTML  = coachNumber;  
-    document.getElementById('train_code').innerHTML = trainCode;  
-    document.getElementById('tkt_price').innerHTML  = '€' + ticketPrice;  
+    // data injection
+    usrNameHtml.innerHTML   = usrNameValue;
+    tktRangeHtml.innerHTML  = ticketRange;  
+    coachNumHtml.innerHTML  = coachNumber;  
+    trainCodeHtml.innerHTML = trainCode;  
+    tktPriceHtml.innerHTML  = '€' + ticketPrice;  
 
-    document.getElementById('output_ticket').style.display = 'block';
-
-  // }
+    // ticket display
+    outTicketHtml.style.display = 'block';
+  }
 } 
 );
 
+// ** TICKET ERASING **
 var eraseBtn = document.getElementById('erase');
 eraseBtn.addEventListener('click', 
   function() {
-    document.getElementById('output_ticket').style.display = 'none';
-    usrName.value = '';
-    usrKm.value   = '';
-    usrAge.value  = '';
-    document.getElementById('usr_name').innerHTML   = '';
-    document.getElementById('tkt_range').innerHTML  = '';  
-    document.getElementById('coach_num').innerHTML  = '';  
-    document.getElementById('train_code').innerHTML = '';  
-    document.getElementById('tkt_price').innerHTML  = ''; 
+    // ticket hiding
+    outTicketHtml.style.display = 'none';
+    // data erasing
+    usrNameForm.value       = '';
+    usrKmForm.value         = '';
+    usrAgeForm.value        = '';
+    usrNameHtml.innerHTML   = '';
+    tktRangeHtml.innerHTML  = '';  
+    coachNumHtml.innerHTML  = '';  
+    trainCodeHtml.innerHTML = '';  
+    tktPriceHtml.innerHTML  = ''; 
     }
 );
-
 
 //###################################################### 
 //
