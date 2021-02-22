@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *** [ FONTS ] *** -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- *** [ FONT AWESOME ] *** -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" /> -->
+    <!-- *** [ REMOTE BOOTSTRAP ] *** -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <!-- *** [ LOCAL BOOTSTRAP ] *** (@grid-float-breakpoint: @screen-md-min) -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- *** [ MY STYLE CSS ] *** -->
+    <!-- <link rel="stylesheet" href="css/12bool.css"> -->
+    <link rel="stylesheet" href="css/master.css">
+    <!-- *** -->
+    <title>Biglietto Treno</title>
+  </head>
+  <body>
+
+    <!------------------------------------------
+
+      Ciao ragazzi, 
+      esercizio di oggi: 
+      
+      calcolo del prezzo del biglietto del treno con form
+
+      cartella/repo **js-biglietto-treno-form**
+
+      Partendo dall'esercizio di venerdì, aggiungiamo la parte visiva come da screenshot
+
+      Creiamo un finto biglietto del treno con:
+
+      > Nome passeggero
+      > Codice treno (numero casuale tra 90.000 e 100.000 escluso)
+      > Numero carrozza (numero causale tra 1 e 10)
+      > Prezzo calcolato
+      > Categoria selezionata dall'utente
+      
+      Aggiungiamo una piccola animazione al click su "Crea" e "Annulla", se clicchiamo su annulla dobbiamo ripulire il form.
+
+      Buon lavoro e... buon viaggio!
+
+    ------------------------------------------->
+
+    <main>
+
+      <section class="input_form">
+        <h1 class="ms_txt_title">calcola il prezzo del tuo biglietto</h1>
+        <div class="form_box">
+          <div class="row_in">
+            <div class="input_box input_usr">
+              <label for="name_surname" class="ms_txt_1"><span>Nome Cognome</span></label>
+              <input id="name_surname" type="text" name="name_surname" placeholder="inserisci il nome" required>
+            </div>
+            <div class="input_box input_distance">
+              <label for="distance" class="ms_txt_1"><span>Km da percorrere</span></label>
+              <input id="distance"type="number" name="distance" placeholder="Km da percorrere" required>
+            </div>
+            <div class="input_box input_age">
+              <label for="age_range" class="ms_txt_1"><span>Fascia d'età</span></label>
+              <select id="age_range" name="age_range">
+                <option value="age_0">scegli</option>
+                <option value="age_1">Minorenne</option>
+                <option value="age_2">Over 65</option>
+              </select>
+            </div>
+          </div>
+          <div class="row_btn">
+            <button id="generate">Genera</button>
+            <button id="erase">Annulla</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="output_ticket">
+        <h1 class="ms_txt_title">il tuo biglietto</h1>
+        <div class="ticket_box">
+
+          <h3>DETTAGLIO PASSEGGERI</h3>
+          
+          <div class="ticket_content">
+          
+            <div class="ticket_header">
+              <h3>NOME PASSEGGERO</h3>
+              <h3 id="usr_name"></h3>
+            </div>
+          
+            <table class="ticket_info">
+              <thead>
+                <tr>
+                  <td>Offerta</td>
+                  <td>Carrozza</td>
+                  <td>Codice CP</td>
+                  <td>Costo Biglietto</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="tkt_range"></td>
+                  <td id="coach_num"></td>
+                  <td id="train_code"></td>
+                  <td id="tkt_price"></td>
+                </tr>  
+              </tbody>
+            </table> <!--ticket info-->  
+          
+          </div> <!--ticket content-->
+        
+        </div> <!--ticket box-->
+      </section>
+
+    </main>
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+  </body>
+</html>
