@@ -12,15 +12,10 @@ var generateBtn = document.getElementById('generate');
 generateBtn.addEventListener('click', 
 function() {
 
-  console.log(   'usrNameValue = ' + usrNameValue + '\n'
-               + 'usrKmValue   = ' + usrKmValue   + '\n'
-               + 'usrAgeValue  = ' + usrAgeValue  + '\n' );
-
   // if (usrNameValue == '' || usrKmValue == '') {
   //   alert('compila nome e distanza!');
   // } else {
 
-    // CALCOLO BIGLIETTO 
     usrNameValue = usrName.value;
     usrKmValue   = usrKm.value;
     usrAgeValue  = usrAge.value;    
