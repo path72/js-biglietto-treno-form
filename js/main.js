@@ -20,41 +20,41 @@ var tktPriceHtml  = document.getElementById('tkt_price');
 // ** TICKET GENERATION **
 var generateBtn = document.getElementById('generate');
 generateBtn.addEventListener('click', 
-function() {
+  function() {
 
-  // data retrieving
-  usrNameValue = usrNameForm.value;
-  usrKmValue   = usrKmForm.value;
-  usrAgeValue  = usrAgeForm.value;    
-  console.log(   'usrNameValue = ' + usrNameValue + '\n'
-               + 'usrKmValue   = ' + usrKmValue   + '\n'
-               + 'usrAgeValue  = ' + usrAgeValue  + '\n' );
+    // data retrieving
+    usrNameValue = usrNameForm.value;
+    usrKmValue   = usrKmForm.value;
+    usrAgeValue  = usrAgeForm.value;    
+    console.log(   'usrNameValue = ' + usrNameValue + '\n'
+                + 'usrKmValue   = ' + usrKmValue   + '\n'
+                + 'usrAgeValue  = ' + usrAgeValue  + '\n' );
 
-  // consistency check
-  if (usrNameValue == '' || usrKmValue == '') {
-    alert('compila nome e distanza!');
-  } else {
+    // consistency check
+    if (usrNameValue == '' || usrKmValue == '') {
+      alert('compila nome e distanza!');
+    } else {
 
-    // data generation
-    var coachNumber = Math.floor(Math.random()*10)+1;
-    var trainCode = Math.floor(Math.random()*10000)+90000;
-    var ticketPrice = priceUnit * usrKmValue;    
-    var ticketRange = 'N.A.';
-    if      (usrAgeValue == 'age_1') { ticketPrice *= 0.8; ticketRange = 'Sconto minorenne'; }
-    else if (usrAgeValue == 'age_2') { ticketPrice *= 0.6; ticketRange = 'Sconto over 65'; }
-    ticketPrice = (Math.round(ticketPrice*100)/100).toFixed(2);
+      // data generation
+      var coachNumber = Math.floor(Math.random()*10)+1;
+      var trainCode = Math.floor(Math.random()*10000)+90000;
+      var ticketPrice = priceUnit * usrKmValue;    
+      var ticketRange = 'N.A.';
+      if      (usrAgeValue == 'age_1') { ticketPrice *= 0.8; ticketRange = 'Sconto minorenne'; }
+      else if (usrAgeValue == 'age_2') { ticketPrice *= 0.6; ticketRange = 'Sconto over 65'; }
+      ticketPrice = (Math.round(ticketPrice*100)/100).toFixed(2);
 
-    // data injection
-    usrNameHtml.innerHTML   = usrNameValue;
-    tktRangeHtml.innerHTML  = ticketRange;  
-    coachNumHtml.innerHTML  = coachNumber;  
-    trainCodeHtml.innerHTML = trainCode;  
-    tktPriceHtml.innerHTML  = '€' + ticketPrice;  
+      // data injection
+      usrNameHtml.innerHTML   = usrNameValue;
+      tktRangeHtml.innerHTML  = ticketRange;  
+      coachNumHtml.innerHTML  = coachNumber;  
+      trainCodeHtml.innerHTML = trainCode;  
+      tktPriceHtml.innerHTML  = '€' + ticketPrice;  
 
-    // ticket display
-    outTicketHtml.style.opacity = 1;
-  }
-} 
+      // ticket display
+      outTicketHtml.style.opacity = 1;
+    }
+  } 
 );
 
 // ** TICKET ERASING **
@@ -72,5 +72,5 @@ eraseBtn.addEventListener('click',
     coachNumHtml.innerHTML  = '';  
     trainCodeHtml.innerHTML = '';  
     tktPriceHtml.innerHTML  = ''; 
-    }
+  }
 );
