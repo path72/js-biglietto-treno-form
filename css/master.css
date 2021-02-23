@@ -68,13 +68,7 @@ main .input_form .form_box .row_btn {
   justify-content: center;
 }
 main .input_form .form_box .row_btn button {
-  padding: 5px;
-  color: var(--purple);
-  background-color: var(--lightgrey);
-  border: 1px solid var(--black);
-  border-radius: 5px;
   margin: 40px 20px 0;
-  cursor: pointer;
 }
 
 /****************************************************************
@@ -88,13 +82,7 @@ main .input_form .form_box .row_btn button {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 #alert button {
-  padding: 5px;
-  color: var(--purple);
-  background-color: var(--lightgrey);
-  border: 1px solid var(--black);
-  border-radius: 5px;
   margin-top: 10px;
-  cursor: pointer;
 }
 
 /****************************************************************
@@ -148,6 +136,18 @@ main #output_ticket .ticket_box table td {
   display: block;
   opacity: 1;
   transition: all 0.5s;
+}
+
+/****************************************************************
+**  BUTTON
+*/
+button {
+  padding: 5px;
+  color: var(--purple);
+  background-color: var(--lightgrey);
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /****************************************************************
