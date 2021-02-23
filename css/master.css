@@ -78,12 +78,28 @@ main .input_form .form_box .row_btn button {
 }
 
 /****************************************************************
+**  ALERT
+*/
+#alert {
+  padding: 30px 50px;
+  color: var(--purple);
+  border-radius: 15px;
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#alert button {
+  padding: 5px;
+  color: var(--purple);
+  background-color: var(--lightgrey);
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/****************************************************************
 **  TICKET
 */
-main #output_ticket {
-  opacity: 0;
-  transition: opacity 0.5s;
-}
 main #output_ticket .ticket_box {
   padding:15px;
   color: var(--black);
@@ -118,6 +134,20 @@ main #output_ticket .ticket_box table td:not(:first-child) {
 }
 main #output_ticket .ticket_box table td {
   padding: 0 15px;
+}
+
+/****************************************************************
+**  TICKET ON/OFF
+*/
+.hide {
+  display: none;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.show {
+  display: block;
+  opacity: 1;
+  transition: all 0.5s;
 }
 
 /****************************************************************

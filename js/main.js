@@ -9,8 +9,10 @@ var usrNameForm = document.getElementById('name_surname');
 var usrKmForm   = document.getElementById('distance');
 var usrAgeForm  = document.getElementById('age_range');
 
-// data display hooks
-var outTicketHtml = document.getElementById('output_ticket')
+// info display hooks
+var alertHtml     = document.getElementById('alert');
+var alertMsgHtml  = document.getElementById('alert_msg');
+var outTicketHtml = document.getElementById('output_ticket');
 var usrNameHtml   = document.getElementById('usr_name');
 var tktRangeHtml  = document.getElementById('tkt_range');  
 var coachNumHtml  = document.getElementById('coach_num');  
@@ -18,7 +20,7 @@ var trainCodeHtml = document.getElementById('train_code');
 var tktPriceHtml  = document.getElementById('tkt_price');  
 
 // ** TICKET GENERATION **
-var generateBtn = document.getElementById('generate');
+var generateBtn = document.getElementById('generate_btn');
 generateBtn.addEventListener('click', 
   function() {
 
@@ -27,13 +29,20 @@ generateBtn.addEventListener('click',
     usrKmValue   = usrKmForm.value;
     usrAgeValue  = usrAgeForm.value;    
     console.log(   'usrNameValue = ' + usrNameValue + '\n'
-                + 'usrKmValue   = ' + usrKmValue   + '\n'
-                + 'usrAgeValue  = ' + usrAgeValue  + '\n' );
+                 + 'usrKmValue   = ' + usrKmValue   + '\n'
+                 + 'usrAgeValue  = ' + usrAgeValue  + '\n' );
 
     // consistency check
     if (usrNameValue == '' || usrKmValue == '') {
-      alert('compila nome e distanza!');
+
+      alertHtml.className = 'show';
+      alertMsgHtml.innerHTML = 'Compila nome e distanza!';
+
     } else {
+
+      // alert hiding
+      alertHtml.className = 'hide';
+      alertMsgHtml.innerHTML = '';
 
       // data generation
       var coachNumber = Math.floor(Math.random()*10)+1;
@@ -52,17 +61,17 @@ generateBtn.addEventListener('click',
       tktPriceHtml.innerHTML  = '€' + ticketPrice;  
 
       // ticket display
-      outTicketHtml.style.opacity = 1;
+      outTicketHtml.className = 'show';
     }
   } 
 );
 
 // ** TICKET ERASING **
-var eraseBtn = document.getElementById('erase');
+var eraseBtn = document.getElementById('erase_btn');
 eraseBtn.addEventListener('click', 
   function() {
     // ticket hiding
-    outTicketHtml.style.opacity = 0;
+    outTicketHtml.className = 'hide';
     // data erasing
     usrNameForm.value       = '';
     usrKmForm.value         = '';
@@ -71,6 +80,21 @@ eraseBtn.addEventListener('click',
     tktRangeHtml.innerHTML  = '';  
     coachNumHtml.innerHTML  = '';  
     trainCodeHtml.innerHTML = '';  
-    tktPriceHtml.innerHTML  = ''; 
+    tktPriceHtml.innerHTML  = '';
+    // alert hiding
+    alertHtml.className = 'hide';
+    alertMsgHtml.innerHTML = '';
   }
 );
+
+// ** TICKET RESUMING **
+var resumeBtn = document.getElementById('resume_btn');
+resumeBtn.addEventListener('click', 
+  function() {
+    // alert hiding
+    alertHtml.className = 'hide';
+    alertMsgHtml.innerHTML = '';
+  }
+);
+
+// tre volte ripetutto alert hiding! uff...

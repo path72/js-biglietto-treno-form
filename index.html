@@ -36,7 +36,7 @@
             </div>
             <div class="input_box">
               <label for="age_range" class="ms_txt_1"><span>Fascia d'età</span></label>
-              <select id="age_range" name="age_range">
+              <select id="age_range" name="age_range_name">
                 <option value="">scegli</option>
                 <option value="age_1">Minorenne</option>
                 <option value="age_2">Over 65</option>
@@ -44,13 +44,18 @@
             </div>
           </div>
           <div class="row_btn">
-            <button id="generate">Genera</button>
-            <button id="erase">Annulla</button>
+            <button id="generate_btn">Genera</button>
+            <button id="erase_btn">Annulla</button>
           </div>
         </div>
       </section>
+      
+      <section id="alert" class="hide">
+        <div id="alert_msg"></div>
+        <button id="resume_btn">Riprendi</button>
+      </section>      
 
-      <section id="output_ticket">
+      <section id="output_ticket" class="hide">
         <h1 class="ms_txt_title">il tuo biglietto</h1>
         <div class="ticket_box">
           <h3>DETTAGLIO PASSEGGERI</h3>
